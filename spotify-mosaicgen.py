@@ -17,17 +17,17 @@ height     = 320
 rows       = 5
 columns    = 8
 
-
+# gets vars
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 SPOTIFY_PLAYLIST_USER = os.getenv("SPOTIFY_PLAYLIST_USER")
 SPOTIFY_PLAYLIST_ID = os.getenv("SPOTIFY_PLAYLIST_ID")
 OUTPUT_FILE = os.getenv("OUTPUT_FILE")
 
+# authenticates
 credentials = oauth2.SpotifyClientCredentials(
         client_id=CLIENT_ID,
         client_secret=CLIENT_SECRET)
-
 token = credentials.get_access_token()
 spotify = spotipy.Spotify(auth=token)
 
